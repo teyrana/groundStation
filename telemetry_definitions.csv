@@ -1,0 +1,38 @@
+Telemetry Field
+Name,ID,Subsystem,Type,Width,Default Value,display,store,Limit Enable,Warning Min,Warning Max,Error Min,Error Max,Encoding
+Sync Bytes,1,CDH,byte,2,0,Y,Y,N,-1,2,-1,10
+format version,2,CDH,uint,8,0,Y,Y,N,-1,2,-1,10
+frame length,3,CDH,uint,16,0,Y,Y,N,-1,2,-1,10
+timestamp,4,CDH,uint,32,1293840000,Y,Y,N,0,0,0,0
+checksum,5,CDH,byte,16,0x0A0A,Y,Y,N,0,0,0,0
+,6
+,7
+,8
+,9
+,10
+,11
+,12
+,13
+,14
+,15
+,16
+,17
+,18
+,19
+,20
+,21
+,22
+,23
+,24
+,25
+,26
+,27
+,28
+,29
+,30
+,31
+,32
+,33
+,34
+,35
+,36

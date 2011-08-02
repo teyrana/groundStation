@@ -1,0 +1,30 @@
+features to add:
+	crc check
+	hotkey commands:
+	   'q' quit
+	extensible telemetry display
+                              
+	trending
+         
+
+
+Commands: 
+    simple command xmit
+         
+    ADCS: upload new MOI
+
+          command impulse
+
+
+  
+
+    CDH:last command type/id
+
+        last command parameter
+
+        last command number
+
+
+UI:         
+    integrate actions into GUI? :
+	http://download.oracle.com/javase/tutorial/uiswing/misc/action.html

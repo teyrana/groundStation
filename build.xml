@@ -1,0 +1,92 @@
+<project name="Telemetry" default="dist" basedir=".">
+    <description>
+      Simple Telemetry Processor
+    </description>
+  <!-- set global properties for this build -->
+  <property name="build.dir" location="build"/>
+  <property name="dist.dir"  location="dist"/>
+  <property name="lib.dir" location="lib"/>
+  <property name="log.dir" location="log"/>
+  <property name="src.dir" location="src"/>
+  <property name="manifest" location="${src.dir}/MANIFEST.INF"/>
+  <property name="classpath32" location="C:\Program Files\Java\jre6\lib"/>
+  <property name="classpath64" location="C:\Program Files (x86)\Java\jre6\lib"/>
+	
+  <!-- Define the CLASSPATH -->
+  <path id="lib.classpath">
+    <!-- Don't forget to add these to the MANIFEST.INF-->
+    <!--<pathelement path="${classpath64}"/>-->
+    <pathelement location="${lib.dir}/log4j-1.2.16.jar"/>
+    <pathelement location="${lib.dir}/RXTXcomm.jar"/>
+    <pathelement location="${lib.dir}/opencsv-2.3.jar"/>
+  </path>
+
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${dist.dir}"/>
+    <mkdir dir="${log.dir}"/>
+  </target>
+
+  <target name="gui" depends="build">
+    <java fork="true" jar="${dist.dir}/gs.jar">
+      <classpath refid="lib.classpath"/>
+      <arg value="-g"/>
+    </java>
+  </target>
+
+  <target name="run" depends="gui"/>
+
+  <target name="cli" depends="build" >
+    <java fork="true" jar="${dist.dir}/gs.jar">
+      <classpath refid="lib.classpath"/>
+      <arg value="-c"/>
+    </java>
+  </target>
+
+  <target name="debug" depends="build" >
+    <java fork="true" jar="${dist.dir}/gs.jar">
+      <classpath refid="lib.classpath"/>
+      <arg value="-dvv"/>
+    </java>
+  </target>
+          
+  <target name="compile" depends="init"
+        description="compile the source " >
+    <!-- Compile the java code from ${src.dir} into ${build.dir} -->
+    <javac srcdir="${src.dir}" 
+           destdir="${build.dir}" 
+           includeAntRuntime="false" 
+           verbose="no">      
+      <classpath refid="lib.classpath"/>
+      <compilerarg value="-Xlint:unchecked"/>
+    </javac>
+  </target>
+
+  <target name="build" depends="compile"
+        description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <!-- mkdir dir="${dist}/lib" -->
+    <mkdir dir="${dist.dir}"/>
+    <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+    <jar jarfile="${dist.dir}/gs.jar" 
+         basedir="${build.dir}" 
+         manifest="${manifest}">
+        <!-- include these manually. <fileset dir="${lib.dir}" includes="**/*.jar" />-->
+      </jar>
+  </target>
+
+  <target name="dist" depends="build"
+          description="build redistributable package"/>
+
+  <target name="clean"
+        description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build.dir}" />
+    <delete dir="${dist.dir}/gs.jar"/>
+    <delete dir="${log.dir}"/>
+  </target>
+</project>

@@ -1,0 +1,19 @@
+groundStation Core code:
+<unlicensed>  will use MIT License (or LGPL)
+
+Dependencies:
+    JAVA SDK:
+	Oracle Binary Code License Agreement
+	http://www.oracle.com/technetwork/java/javase/terms/license/index.html
+
+    RXTX:
+	LGPL
+	http://www.gnu.org/licenses/lgpl.html
+
+    Log4j:
+	Apache Software License, ver 2.0
+	http://logging.apache.org/log4j/1.2/license.html
+
+    Java CSV:
+	LGPL
+	http://www.gnu.org/licenses/lgpl.html

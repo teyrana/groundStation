@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: (Java Tutorial)
+Main-Class: cubesat.groundStation.main
+Class-Path: ../lib/log4j-1.2.16.jar ../lib/RXTXcomm.jar  ../lib/opencsv-2.3.jar

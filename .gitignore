@@ -1,0 +1,101 @@
+# Git Ignore File.
+# DMW
+
+# use glob syntax.
+syntax: glob
+
+# standard development files
+build/*
+dist/*
+bin/*
+*.log
+*.out
+*.bin
+*.orig
+*.URL
+*~
+
+# ===== ===== Languages ===== ===== 
+# C variant files
+*.o
+*.gch
+
+# Java
+*.class
+.classpath
+
+# ===== ===== Development Environments ===== ===== 
+# XCode Files
+*.xcodeproj
+
+# visual studio files
+x64*
+*.suo
+*.ncb
+*.user
+*.*sdf
+ipch*
+
+# NBProject files
+nbproject/*
+.project
+.settings/*
+
+# LaTeX byproduct files
+*.pdfsync
+*.synctex
+*.aux
+*.pdf
+
+# TeXnicCenter files
+*.bbl
+*.blg
+*.tps
+
+# ===== ===== Revision Control Files ===== ===== 
+commit.txt
+
+# mercurial files
+.hg*
+*.orig
+
+#git files
+.git
+
+# ===== ===== Home Dir files ===== ===== 
+# just plain ignore
+.bash_history
+.ssh*
+AppData*
+Contacts*
+Documents*
+Desktop*
+Downloads*
+Favorites*
+Links*
+NTUSER*
+Thumbs.db
+ntuser*
+
+# under their own git repositories:
+acad*
+project*
+
+# rsync these, because they're binary:
+.passwd.kdbx
+Export*.vssettings
+text*
+audio*
+job*
+music*
+pictures*
+
+# ===== ===== Operating System Dependent Files ===== ===== 
+#windows files
+*.lnk
+*.dll
+*.exe
+
+# Mac OSX
+.DS_Store
+
